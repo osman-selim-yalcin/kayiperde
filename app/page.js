@@ -15,6 +15,8 @@ import clsx from "clsx";
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import ContactSection from "./contact";
+import Footer from "./footer";
 import PhilosophySection from "./philo";
 
 export default function Home() {
@@ -88,64 +90,9 @@ export default function Home() {
             className={"-top-9/20"}
           />
         </div>
-        <div>
-          <h2 className="text-xl font-bold text-center">Bize Ulaşın</h2>
-          <div className="mx-auto flex justify-around py-16 items-center">
-            <iframe
-              className="w-[600px] h-[450px]"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50469.565010237995!2d29.092132!3d37.758442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c73f579ae1ccef%3A0x9e7476dcd8097b05!2sKay%C4%B1%20Perde!5e0!3m2!1str!2str!4v1750335623134!5m2!1str!2str"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <div>
-              <p className="font-bold">İBRAHİM KÖSEOĞLU</p>
-              <a href="tel:05446655150">0544 665 51 50</a>
-              <p>
-                <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14c73f579ae1ccef:0x9e7476dcd8097b05?sa=X&amp;ved=1t:8290&amp;ictx=111">
-                  İncilipınar Mah. Zübeyde Hanım Cad, 3371/1. Sk. No:4/A, 20010
-                  Pamukkale/Denizli
-                </a>
-              </p>
-              <table className="my-16 table-auto w-1/2">
-                <tbody>
-                  <tr>
-                    <td className="font-bold">Pazartesi</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Salı</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Çarşamba</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Perşembe</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Cuma</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Cumartesi</td>
-                    <td>09:00 - 20:30</td>
-                  </tr>
-                  <tr>
-                    <td className="font-bold">Pazar</td>
-                    <td>Kapalı</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <ContactSection />
       </main>
-      <footer className="text-center py-4 bg-slate-700 text-neutral-200">
-        KayıPerde
-      </footer>
+      <Footer />
     </>
   );
 }

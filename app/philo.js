@@ -32,7 +32,7 @@ export default function PhilosophySection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.015, // Harfler arası gecikme azaltıldı
+        staggerChildren: 0.012, // Harfler arası gecikme azaltıldı
         delayChildren: 0.1, // Başlangıç gecikmesi
       },
     },
