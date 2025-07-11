@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr" className={`${cormorant.variable} ${montserrat.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="antialiased">
         <Lenis>{children}</Lenis>
       </body>
     </html>

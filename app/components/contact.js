@@ -9,7 +9,7 @@ export default function ContactSection() {
         Bize Ulaşın
       </h2>
 
-      <div className="container mx-auto flex flex-col md:flex-row gap-10 px-6">
+      <div className="container mx-auto flex flex-col md:flex-row gap-10">
         <InstagramRail />
 
         {/* SAĞ: Harita + detaylar */}

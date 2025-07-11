@@ -86,7 +86,7 @@ export default function PhilosophySection() {
     <div ref={containerRef} className="w-full">
       <section
         ref={sectionRef}
-        className="relative h-screen flex items-center justify-center px-6 text-center bg-white w-full"
+        className="relative h-screen flex items-center justify-center text-center  w-full"
       >
         <div className="absolute inset-0 z-0">
           <Image
@@ -99,18 +99,18 @@ export default function PhilosophySection() {
         </div>
 
         <motion.div
-          className="relative z-10 max-w-4xl p-8 bg-white bg-opacity-70 backdrop-blur-sm rounded-xl"
+          className="relative z-10 max-w-5xl p-8 rounded-xl "
           initial="hidden"
           animate={controls}
           variants={containerVariants}
           style={{ letterSpacing: "0.001em" }}
         >
-          <div className="text-xs uppercase tracking-widest font-medium mb-6">
+          <div className="text-md uppercase tracking-widest font-medium mb-6">
             {splitLetters("Perde · Kumaş · Tasarım")}
           </div>
 
           <div
-            className="text-lg md:text-2xl leading-relaxed text-gray-800 font-bold"
+            className="text-2xl md:text-2xl leading-relaxed text-gray-800 font-bold"
             style={{ letterSpacing: "0.4px", lineHeight: "1.3" }}
           >
             {splitLetters(

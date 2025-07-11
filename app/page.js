@@ -1,51 +1,17 @@
 "use client";
 
-import curtain1 from "@/public/1.jpg";
-import curtain10 from "@/public/10.jpg";
-import curtain2 from "@/public/2.jpg";
-import curtain3 from "@/public/3.jpg";
-import curtain4 from "@/public/4.jpg";
-import curtain5 from "@/public/5.jpg";
-import curtain6 from "@/public/6.jpg";
-import curtain7 from "@/public/7.jpg";
-import curtain8 from "@/public/8.jpg";
-import curtain9 from "@/public/9.jpg";
 import logo from "@/public/logo.png";
-import clsx from "clsx";
-import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import ContactSection from "./contact";
-import Footer from "./footer";
-import PhilosophySection from "./philo";
+import ContactSection from "./components/contact";
+import ExploreProjectsSection from "./components/explore";
+import Footer from "./components/footer";
+import PhilosophySection from "./components/philo";
 
 export default function Home() {
-  const gallery = useRef(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  const { scrollYProgress } = useScroll({
-    target: gallery,
-    offset: ["start end", "end start"],
-  });
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
-  useEffect(() => {
-    const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
   return (
     <>
       <main>
-        <div className="h-screen relative flex font-cormorant overflow-hidden shadow-[0_25px_35px_rgba(0,0,0,0.25)]">
+        <div className="h-screen relative flex overflow-hidden shadow-[0_25px_35px_rgba(0,0,0,0.25)]">
           <Image
             src={"/cover.jpg"}
             alt="Arka plan perde"
@@ -55,67 +21,27 @@ export default function Home() {
           <Image
             src={logo}
             alt="Kayı Perde Logo"
-            className="absolute w-2/5 -right-16 -top-20"
+            className="absolute w-2/5 -right-16 top-16"
           />
-          <p className="absolute top-4/5 right-18 text-xl w-[400px] text-right font-bold">
+          {/* <p className="absolute top-4/5 right-18 text-xl w-[400px] text-right font-bold">
             Perde, odanın ruhunu yumuşaklık ve zarafetle saran büyülü bir
             ayrıntıdır.
-          </p>
+          </p> */}
         </div>
+
         <div className="flex justify-center items-center sticky bottom-0 -z-10 h-[100vh]">
           <PhilosophySection />
         </div>
-        <div
-          ref={gallery}
-          className="h-[175vh] bg-[#e0ded8] relative flex gap-[2vw] p-[2vw] box-border overflow-hidden shadow-[0_-25px_35px_rgba(0,0,0,0.25)]"
-        >
-          <Column
-            images={[curtain1, curtain2]}
-            y={y4}
-            className={"-top-15/20"}
-          />
-          <Column
-            images={[curtain4, curtain5, curtain6]}
-            y={y2}
-            className={"-top-19/20"}
-          />
-          <Column
-            images={[curtain7, curtain8, curtain9]}
-            y={y3}
-            className={"-top-9/20"}
-          />
-          <Column
-            images={[curtain10, curtain3]}
-            y={y}
-            className={"-top-9/20"}
-          />
+
+        <div>
+          <ExploreProjectsSection />
         </div>
-        <ContactSection />
+
+        <div>
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </>
   );
 }
-
-const Column = ({ images, y, className }) => {
-  return (
-    <motion.div
-      className={clsx([
-        "relative h-full w-1/4 min-w-[250px] flex flex-col gap-[2vw]",
-        className,
-      ])}
-      style={{ y }}
-    >
-      {images.map((src, i) => {
-        return (
-          <div
-            key={i}
-            className={"h-full w-full relative rounded-[2vw] overflow-hidden"}
-          >
-            <Image src={src} alt="image" fill className="object-cover" />
-          </div>
-        );
-      })}
-    </motion.div>
-  );
-};
