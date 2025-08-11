@@ -6,11 +6,11 @@ import Link from "next/link";
 
 // Listeyi istediğin gibi uzat
 const posts = [
-  { src: "/1.jpg", href: "https://www.instagram.com/p/1" },
-  { src: "/2.jpg", href: "https://www.instagram.com/p/2" },
-  { src: "/3.jpg", href: "https://www.instagram.com/p/3" },
-  { src: "/4.jpg", href: "https://www.instagram.com/p/4" },
-  { src: "/5.jpg", href: "https://www.instagram.com/p/5" },
+  { src: "/1.jpg", href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1" },
+  { src: "/2.jpg", href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1" },
+  { src: "/3.jpg", href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1" },
+  { src: "/4.jpg", href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1" },
+  { src: "/5.jpg", href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1" },
 ];
 
 const rail = [...posts, ...posts]; // sonsuz scroll için tekrar
