@@ -83,48 +83,50 @@ export default function PhilosophySection() {
   };
 
   return (
-    <div ref={containerRef} className="w-full">
-      <section
-        ref={sectionRef}
-        className="relative h-screen flex items-center justify-center text-center  w-full"
-      >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/lines.jpg"
-            alt="Background pattern"
-            fill
-            className="object-cover"
-            quality={80}
-          />
-        </div>
-
-        <motion.div
-          className="relative z-10 max-w-5xl p-8 rounded-xl "
-          initial="hidden"
-          animate={controls}
-          variants={containerVariants}
-          style={{ letterSpacing: "0.001em" }}
+    <div className="flex justify-center items-center sticky bottom-0 -z-10 h-[100vh]">
+      <div ref={containerRef} className="w-full">
+        <section
+          ref={sectionRef}
+          className="relative h-screen flex items-center justify-center text-center  w-full"
         >
-          <div className="text-md uppercase tracking-widest font-medium mb-6">
-            {splitLetters("Perde · Kumaş · Tasarım")}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/lines.jpg"
+              alt="Background pattern"
+              fill
+              className="object-cover"
+              quality={80}
+            />
           </div>
 
-          <div
-            className="text-2xl md:text-2xl leading-relaxed text-gray-800 font-bold"
-            style={{ letterSpacing: "0.4px", lineHeight: "1.3" }}
+          <motion.div
+            className="relative z-10 max-w-5xl p-8 rounded-xl "
+            initial="hidden"
+            animate={controls}
+            variants={containerVariants}
+            style={{ letterSpacing: "0.001em" }}
           >
-            {splitLetters(
-              "Zamana meydan okuyan dokularla mekânlara hayat veriyoruz, "
-            )}
-            {splitLetters(
-              "İncelikle seçilmiş kumaşlar, zanaatın ustalığıyla buluşuyor. "
-            )}
-            {splitLetters(
-              "Perde, sadece bir aksesuar değil; yaşanmışlığın zarif bir yansımasıdır."
-            )}
-          </div>
-        </motion.div>
-      </section>
+            <div className="text-md uppercase tracking-widest font-medium mb-6">
+              {splitLetters("Perde · Kumaş · Tasarım")}
+            </div>
+
+            <div
+              className="text-2xl md:text-2xl leading-relaxed text-gray-800 font-bold"
+              style={{ letterSpacing: "0.4px", lineHeight: "1.3" }}
+            >
+              {splitLetters(
+                "Zamana meydan okuyan dokularla mekânlara hayat veriyoruz, "
+              )}
+              {splitLetters(
+                "İncelikle seçilmiş kumaşlar, zanaatın ustalığıyla buluşuyor. "
+              )}
+              {splitLetters(
+                "Perde, sadece bir aksesuar değil; yaşanmışlığın zarif bir yansımasıdır."
+              )}
+            </div>
+          </motion.div>
+        </section>
+      </div>
     </div>
   );
 }

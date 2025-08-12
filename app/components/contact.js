@@ -1,28 +1,104 @@
 "use client";
 
-import InstagramRail from "./instagram";
+import { motion } from "motion/react"; // framer-motion kullanıyorsan: "framer-motion"
+import Image from "next/image";
+import Link from "next/link";
 
-export default function ContactSection() {
+const PALETTE = {
+  line: "#CBB8A2",
+};
+
+const posts = [
+  {
+    src: "/1.jpg",
+    href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1",
+  },
+  {
+    src: "/2.jpg",
+    href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1",
+  },
+  {
+    src: "/3.jpg",
+    href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1",
+  },
+  {
+    src: "/4.jpg",
+    href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1",
+  },
+  {
+    src: "/5.jpg",
+    href: "https://www.instagram.com/p/C35rr54M9Cq/?img_index=1",
+  },
+];
+
+const rail = [...posts, ...posts];
+
+export default function ExploreMoreSection() {
   return (
-    <section id="contact" className="bg-white py-20">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-        Bize Ulaşın
+    <section id="more" className="relative bg-white py-20">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-neutral-900">
+        Daha Fazlasını Gör
       </h2>
+      {/* Zarif ayraç */}
+      <div
+        className="mx-auto mb-12 h-px w-24"
+        style={{
+          background: `linear-gradient(90deg, transparent, ${PALETTE.line}, transparent)`,
+        }}
+      />
 
-      <div className="container mx-auto flex flex-col md:flex-row gap-10">
-        <InstagramRail />
-
-        {/* SAĞ: Harita + detaylar */}
-        <div className="w-full md:w-1/2 flex flex-col gap-6">
-          <iframe
-            className="w-full h-[500px] rounded-xl shadow-lg"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50469.565010237995!2d29.092132!3d37.758442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c73f579ae1ccef%3A0x9e7476dcd8097b05!2sKay%C4%B1%20Perde!5e0!3m2!1str!2str!4v1750335623134"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+      {/* 3’lü rail – yalnızca görseller */}
+      <div className="container mx-auto">
+        <div className="flex gap-4 w-full justify-center">
+          <ScrollColumn direction="down" images={rail} />
+          <ScrollColumn direction="up" images={rail} />
+          <ScrollColumn direction="down" images={rail} />
         </div>
       </div>
     </section>
+  );
+}
+
+function ScrollColumn({ direction, images }) {
+  return (
+    <div
+      className="relative h-[500px] w-[300px] overflow-hidden rounded-2xl border bg-white shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.15)]"
+      style={{ borderColor: `${PALETTE.line}55` }}
+    >
+      <motion.div
+        className="absolute flex flex-col gap-4"
+        animate={{ y: direction === "down" ? ["0%", "-50%"] : ["-50%", "0%"] }}
+        transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+      >
+        {images.map(({ src, href }, i) => (
+          <Link
+            key={`${src}-${i}`}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-[300px] h-[250px] group"
+            aria-label={`Instagram post ${i + 1}`}
+          >
+            <Image
+              src={src}
+              alt={`Instagram post ${i}`}
+              fill
+              className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            {/* köşe ikon */}
+            <div className="absolute bottom-3 right-3 bg-white/90 text-black rounded-full p-1 shadow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+              </svg>
+            </div>
+          </Link>
+        ))}
+      </motion.div>
+    </div>
   );
 }
