@@ -1,6 +1,6 @@
 "use client";
 
-import ContactSection from "./components/contact";
+import ContactSection from "./components/more";
 import ExploreProjectsSection from "./components/explore";
 import Footer from "./components/footer";
 import HeroSection from "./components/hero";
