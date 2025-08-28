@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "Kayı Perde",
     images: [
       {
-        url: "/facicon.png",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "Kayı Perde",
@@ -43,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Kayı Perde",
     description: "Denizli’de perde tasarımı ve uygulaması",
-    images: ["/facicon.png"],
+    images: ["/favicon.png"],
   },
 };
 
