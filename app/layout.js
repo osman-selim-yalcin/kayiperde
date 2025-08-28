@@ -20,8 +20,31 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Kayı Perde",
-  description: "Denizli'nin öncü perde tasarım atölyesi",
+  title: "Kayı Perde | Denizli’nin Öncü Perde Tasarım Atölyesi",
+  description:
+    "Fon perde, tül perde, jaluzi, stor perde ve perde tamiri. Zarif tasarım ve kaliteli işçilik.",
+  openGraph: {
+    title: "Kayı Perde",
+    description: "Denizli’de perde tasarımı ve uygulaması",
+    url: "https://kayiperde.com",
+    siteName: "Kayı Perde",
+    images: [
+      {
+        url: "/facicon.png",
+        width: 1200,
+        height: 630,
+        alt: "Kayı Perde",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kayı Perde",
+    description: "Denizli’de perde tasarımı ve uygulaması",
+    images: ["/facicon.png"],
+  },
 };
 
 export default function RootLayout({ children }) {

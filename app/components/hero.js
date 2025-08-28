@@ -71,19 +71,22 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 text-[#EDE5D9]/70 animate-bounce"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-</div>
-
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-[#EDE5D9]/70 animate-bounce"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
 
       {/* İnce çerçeve (mobilde daha az margin/radius) */}
       <div
