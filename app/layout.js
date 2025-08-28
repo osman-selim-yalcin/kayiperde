@@ -24,7 +24,7 @@ export const metadata = {
   description:
     "Fon perde, tül perde, jaluzi, stor perde ve perde tamiri. Zarif tasarım ve kaliteli işçilik. Denizli’nin Öncü Perde Tasarım Atölyesi",
   openGraph: {
-    title: "Kayı Perde",
+    title: "Kayı Perde | Denizli’nin Öncü Perde Tasarım Atölyesi",
     description: "Denizli’de perde tasarımı ve uygulaması",
     url: "https://kayiperde.com",
     siteName: "Kayı Perde",
