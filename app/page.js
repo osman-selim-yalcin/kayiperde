@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import ContactSection from "./components/more";
 import ExploreProjectsSection from "./components/explore";

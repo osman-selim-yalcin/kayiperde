@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Kayı Perde | Denizli’nin Öncü Perde Tasarım Atölyesi",
   description:
-    "Fon perde, tül perde, jaluzi, stor perde ve perde tamiri. Zarif tasarım ve kaliteli işçilik.",
+    "Fon perde, tül perde, jaluzi, stor perde ve perde tamiri. Zarif tasarım ve kaliteli işçilik. Denizli’nin Öncü Perde Tasarım Atölyesi",
   openGraph: {
     title: "Kayı Perde",
     description: "Denizli’de perde tasarımı ve uygulaması",
